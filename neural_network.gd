@@ -43,6 +43,9 @@ func calculate_output(layer: Array, weights: Array, biases: Array):
 	for i in range(len(weights)/len(layer)):
 		out.append(biases[i]);
 	for input in range(len(layer)):
-		for weight in range(len(weights)/len(layer)):
-			out[weight]+=layer[input]*weights[input*2+weight];
+		# probably doable without the counter
+		var counter=0;
+		for weight in weights.slice(input, 2147483647, len(layer)):
+			out[counter]+=layer[input]*weight;
+			counter+=1;
 	return out;
