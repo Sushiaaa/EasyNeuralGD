@@ -15,6 +15,6 @@ There is only one class
 - <b>generate_biases</b>
   - takes 2 variables, <b>min_value</b> and <b>max_value</b>, to randomly generate biases.
 - <b>calculate_output</b>
-    - takes 3 variables, <b>layer</b>, <b>weights</b> and <b>biases</b> to calculate the values of the next layer and return them.
+    - takes 4 variables, <b>layer</b>, <b>weights</b>, <b>biases</b> and optionally <b>activation_function</b> to calculate the values of the next layer and return them. The standard activation function is "ReLU", but can be changed by setting activation_function to "sigmoid" or "binary_step"
 
 ### Examples for these functions are in the test.gd script
