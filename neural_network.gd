@@ -38,7 +38,7 @@ func generate_biases(min_value: float = -1, max_value: float = 1):
 		for neuron in network.slice(1)[layer]:
 			biases[layer].append(randf_range(min_value, max_value));
 
-func calculate_output(layer: Array, weights: Array, biases: Array):
+func calculate_output(layer: Array, weights: Array, biases: Array, activation_function:String="ReLU"):
 	var out: Array = [];
 	for i in range(len(weights)/len(layer)):
 		out.append(biases[i]);
@@ -48,4 +48,18 @@ func calculate_output(layer: Array, weights: Array, biases: Array):
 		for weight in weights.slice(input, 2147483647, len(layer)):
 			out[counter]+=layer[input]*weight;
 			counter+=1;
+	
+	if activation_function=="ReLU":
+		for output in range(len(out)):
+			if out[output] <= 0:
+				out[output] = 0;
+	elif activation_function == "binary_step":
+		for output in range(len(out)):
+			if out[output] >= 0:
+				out[output] = 1;
+			else:
+				out[output] = 0;
+	elif activation_function == "sigmoid":
+		for output in range(len(out)):
+			1/(1+2.71828**-(1*(out[output])));
 	return out;
