@@ -5,6 +5,7 @@ extends Object
 var network: Array = [];
 var weights: Array = [];
 var biases: Array = [];
+var fitness:float=0;
 
 # width is the number of neurons in each layer; depth is the number of layers
 func _init(input_width: int, output_width: int, hidden_layer_depth: int = 0, hidden_layer_width: int = 1):
