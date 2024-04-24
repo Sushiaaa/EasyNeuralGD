@@ -3,7 +3,6 @@ Library used to easily set up neural networks in Godot 4
 This library is still very bare-bones and will receive updates in the near future
 ___
 ## Classes
-There is only one class
 - <b>Network:</b> A basic neural network which has an input layer, an output layer and optionally hidden layers, all of variable size
  
 ## Network Class
